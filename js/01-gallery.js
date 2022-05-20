@@ -3,10 +3,10 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 
 const galleryRef = document.querySelector('.gallery');
-
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
-galleryRef.addEventListener('click');
+galleryRef.addEventListener('click', getLargeImgByClick);
+
 function createGalleryMarkup(items) {
   return items
     .map(
@@ -26,4 +26,13 @@ function createGalleryMarkup(items) {
 
 galleryRef.innerHTML = galleryMarkup;
 
-function getLargeImgByClick() {}
+function getLargeImgByClick(event) {
+  event.preventDefault();
+  if (!event.target.classList.contains('gallery__image')) {
+  }
+
+  console.log(event.target);
+  console.log(event.currentTarget);
+  const galleryEl = event.target;
+  console.log(galleryEl.dataset.source);
+}
