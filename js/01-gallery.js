@@ -16,12 +16,15 @@ function createGalleryMarkup(items) {
      src="${item.preview}"
      data-source="${item.original}"
      alt="${item.description}"
+     loading="lazy"
+     
    />
  </a></div>`
     )
     .join('');
 }
 galleryRef.innerHTML = galleryMarkup;
+
 function getLargeImgByClick(event) {
   event.preventDefault();
   if (!event.target.classList.contains('gallery__image')) {
@@ -43,4 +46,14 @@ function closeModalByEscapeBtn(evt) {
     lightBox.close();
     galleryRef.removeEventListener('keydown', closeModalByEscapeBtn);
   }
+}
+
+const lazyImages = document.querySelectorAll('img[data-source]');
+
+lazyImages.forEach(image => {
+  image.addEventListener('load', onImageLoaded, { once: true });
+});
+
+function onImageLoaded(evt) {
+  console.log('картинка загрузилась');
 }
