@@ -6,7 +6,7 @@ console.log(galleryItems);
 
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
-let lightBox = basicLightbox;
+const lightBox = basicLightbox;
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
