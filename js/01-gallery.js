@@ -39,12 +39,12 @@ function getLargeImgByClick(event) {
   );
   lightBox.show();
 
-  galleryRef.addEventListener('keydown', closeModalByEscapeBtn);
+  galleryRef.addEventListener('keydown', closeModalByEscapeBtn, { once: true });
 }
 function closeModalByEscapeBtn(evt) {
   if (evt.code === 'Escape') {
     lightBox.close();
-    galleryRef.removeEventListener('keydown', closeModalByEscapeBtn);
+    // galleryRef.removeEventListener('keydown', closeModalByEscapeBtn);
   }
 }
 
