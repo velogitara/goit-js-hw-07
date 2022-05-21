@@ -46,4 +46,13 @@ function getLargeImgByClick(event) {
 	`
     )
     .show();
+
+  galleryRef.addEventListener('keydown', closeModalByEscapeBtn);
+}
+
+function closeModalByEscapeBtn(evt) {
+  if (!evt.code === 'Escape') {
+    return;
+  }
+  console.log(evt.code);
 }
