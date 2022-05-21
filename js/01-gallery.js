@@ -7,6 +7,11 @@ const galleryMarkup = createGalleryMarkup(galleryItems);
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
+// document.body.insertAdjacentHTML(
+//   'beforeend',
+//   '<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>'
+// );
+console.log(document.body);
 function createGalleryMarkup(items) {
   return items
     .map(
@@ -29,10 +34,16 @@ galleryRef.innerHTML = galleryMarkup;
 function getLargeImgByClick(event) {
   event.preventDefault();
   if (!event.target.classList.contains('gallery__image')) {
+    return;
   }
 
-  console.log(event.target);
-  console.log(event.currentTarget);
   const galleryEl = event.target;
-  console.log(galleryEl.dataset.source);
+  // console.log(galleryEl.dataset.source);
+  basicLightbox
+    .create(
+      `
+		<img width="1400" height="900" src="${galleryEl.dataset.source}">
+	`
+    )
+    .show();
 }
