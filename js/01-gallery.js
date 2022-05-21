@@ -54,7 +54,7 @@ function getLargeImgByClick(event) {
 
 function closeModalByEscapeBtn(evt) {
   if (evt.code === 'Escape') {
-    return basicLightbox;
+    return;
   }
 
   console.log(evt.code);
