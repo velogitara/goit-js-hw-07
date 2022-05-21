@@ -10,10 +10,10 @@ let lightBox = null;
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
-document.body.insertAdjacentHTML(
-  'beforeend',
-  '<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>'
-);
+// document.body.insertAdjacentHTML(
+//   'beforeend',
+//   '<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>'
+// );
 console.log(document.body);
 function createGalleryMarkup(items) {
   return items
