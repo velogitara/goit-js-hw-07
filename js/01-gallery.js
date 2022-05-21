@@ -1,13 +1,11 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-console.log(galleryItems);
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
 let lightBox = null;
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
-console.log(document.body);
 function createGalleryMarkup(items) {
   return items
     .map(
@@ -42,8 +40,7 @@ function getLargeImgByClick(event) {
 }
 function closeModalByEscapeBtn(evt) {
   if (evt.code === 'Escape') {
-    return lightBox.close();
+    lightBox.close();
+    galleryRef.removeEventListener('keydown', closeModalByEscapeBtn);
   }
-
-  console.log(evt.code);
 }
