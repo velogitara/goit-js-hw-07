@@ -6,7 +6,7 @@ console.log(galleryItems);
 
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
-const lightBox = basicLightbox;
+let lightBox = null;
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
@@ -42,8 +42,7 @@ function getLargeImgByClick(event) {
 
   const galleryEl = event.target;
   // console.log(galleryEl.dataset.source);
-
-  lightBox.create(
+  lightBox = basicLightbox.create(
     `
 		<img width="1400" height="900" src="${galleryEl.dataset.source}">
 	`
