@@ -1,16 +1,18 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 console.log(galleryItems);
+// import { main } from '../node_modules/basiclightbox/src/scripts/main.js';
+// console.log(main);
 
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
 galleryRef.addEventListener('click', getLargeImgByClick);
 
-// document.body.insertAdjacentHTML(
-//   'beforeend',
-//   '<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>'
-// );
+document.body.insertAdjacentHTML(
+  'beforeend',
+  '<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>'
+);
 console.log(document.body);
 function createGalleryMarkup(items) {
   return items
@@ -51,8 +53,9 @@ function getLargeImgByClick(event) {
 }
 
 function closeModalByEscapeBtn(evt) {
-  if (!evt.code === 'Escape') {
-    return;
+  if (evt.code === 'Escape') {
+    return basicLightbox;
   }
+
   console.log(evt.code);
 }
