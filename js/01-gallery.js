@@ -17,6 +17,8 @@ if ('loading' in HTMLImageElement.prototype) {
   script.crossorigin = 'anonymous';
   script.referrerpolicy = 'no-referrer';
 
+  document.body.appendChild(script);
+
   // lazyImages.forEach(image => {
   //   image.addEventListener('load', onImageLoaded, { once: true });
   // });
