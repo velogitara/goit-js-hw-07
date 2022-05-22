@@ -28,11 +28,12 @@ function createGalleryMarkup(items) {
       item =>
         `<div class="gallery__item"><a class="gallery__link" href="${item.original}">
    <img
+   loading="lazy"
      class="gallery__image"
      src="${item.preview}"
      data-source="${item.original}"
      alt="${item.description}"
-     loading="lazy"
+     
      
    />
  </a></div>`
