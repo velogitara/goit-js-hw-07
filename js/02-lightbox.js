@@ -1,16 +1,10 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
+console.log(galleryItems);
 
 const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryMarkup(galleryItems);
-// console.log(galleryMarkup);
-{
-  /* <a class="gallery__item" href="large-image.jpg">
-  <img class="gallery__image" src="small-image.jpg" alt="Image description" />
-</a>; */
-}
 
 function createGalleryMarkup(items) {
   return items
