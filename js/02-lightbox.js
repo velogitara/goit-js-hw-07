@@ -18,14 +18,15 @@ function createGalleryMarkup(items) {
 
 galleryRef.innerHTML = galleryMarkup;
 
-// const handleClick = e => {
-//   e.preventDefault();
+const handleClick = e => {
+  e.preventDefault();
 
-//   // if (e.target.nodeName !== 'IMG') {
-//   //   return;
-//   // }
-// };
-// gallery.addEventListener('click', handleClick);
+  console.log(e.target.nodeName);
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+};
+galleryRef.addEventListener('click', handleClick);
 
 let lightbox = new SimpleLightbox('.gallery a', {
   /* options */
