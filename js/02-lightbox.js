@@ -18,8 +18,18 @@ function createGalleryMarkup(items) {
 
 galleryRef.innerHTML = galleryMarkup;
 
-var lightbox = new SimpleLightbox('.gallery a', {
+// const handleClick = e => {
+//   e.preventDefault();
+
+//   // if (e.target.nodeName !== 'IMG') {
+//   //   return;
+//   // }
+// };
+// gallery.addEventListener('click', handleClick);
+
+let lightbox = new SimpleLightbox('.gallery a', {
   /* options */
+  caption: true,
   captionsData: 'alt',
   captionDelay: 250,
 });
